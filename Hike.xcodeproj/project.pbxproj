@@ -18,6 +18,8 @@
 		A05532ED2C0BE9A400F82EB1 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05532EC2C0BE9A400F82EB1 /* CustomBackgroundView.swift */; };
 		A05532F02C0BEB3300F82EB1 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05532EF2C0BEB3300F82EB1 /* ColorExtension.swift */; };
 		A0638A852C0C102B004CCE79 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0638A842C0C102B004CCE79 /* CustomButtonView.swift */; };
+		DE520E7C2C0D5A4F00817C2A /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE520E7B2C0D5A4F00817C2A /* GradientButtonStyle.swift */; };
+		DE520E7E2C0D5F2900817C2A /* CustomCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE520E7D2C0D5F2900817C2A /* CustomCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		A05532EC2C0BE9A400F82EB1 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
 		A05532EF2C0BEB3300F82EB1 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		A0638A842C0C102B004CCE79 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		DE520E7B2C0D5A4F00817C2A /* GradientButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonStyle.swift; sourceTree = "<group>"; };
+		DE520E7D2C0D5F2900817C2A /* CustomCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleView.swift; sourceTree = "<group>"; };
+		DE520E8C2C0D6AFE00817C2A /* Hike-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hike-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,7 @@
 				A05532E92C0BE78E00F82EB1 /* CardView.swift */,
 				A05532EC2C0BE9A400F82EB1 /* CustomBackgroundView.swift */,
 				A0638A842C0C102B004CCE79 /* CustomButtonView.swift */,
+				DE520E7D2C0D5F2900817C2A /* CustomCircleView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				A05532EF2C0BEB3300F82EB1 /* ColorExtension.swift */,
+				DE520E7B2C0D5A4F00817C2A /* GradientButtonStyle.swift */,
+				DE520E8C2C0D6AFE00817C2A /* Hike-Bridging-Header.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 				TargetAttributes = {
 					A0156F742C0BE47E00D01AA3 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 					A0156F842C0BE48000D01AA3 = {
 						CreatedOnToolsVersion = 15.4;
@@ -286,9 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0156F7B2C0BE47E00D01AA3 /* ContentView.swift in Sources */,
+				DE520E7E2C0D5F2900817C2A /* CustomCircleView.swift in Sources */,
 				A05532EA2C0BE78E00F82EB1 /* CardView.swift in Sources */,
 				A0156F792C0BE47E00D01AA3 /* HikeApp.swift in Sources */,
 				A0638A852C0C102B004CCE79 /* CustomButtonView.swift in Sources */,
+				DE520E7C2C0D5A4F00817C2A /* GradientButtonStyle.swift in Sources */,
 				A05532ED2C0BE9A400F82EB1 /* CustomBackgroundView.swift in Sources */,
 				A05532F02C0BEB3300F82EB1 /* ColorExtension.swift in Sources */,
 			);
@@ -451,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hike/Preview Content\"";
@@ -469,6 +481,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lamnguyen.Hike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hike/Utility/Hike-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hike/Preview Content\"";
@@ -497,6 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lamnguyen.Hike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hike/Utility/Hike-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

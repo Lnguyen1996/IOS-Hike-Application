@@ -12,16 +12,17 @@ struct CardView: View {
     
     @State private var imageNumber: Int = 1
     @State private var randomNumber: Int = 1
+    @State private var isShowingSheet: Bool = false
     
     // MARK: - FUNCTIONS
     
     func randomImage(){
         var possibleNumbers = Set(1...5)
-            possibleNumbers.remove(imageNumber)
-            
-            if let newNumber = possibleNumbers.randomElement() {
-                imageNumber = newNumber
-            }
+        possibleNumbers.remove(imageNumber)
+        
+        if let newNumber = possibleNumbers.randomElement() {
+            imageNumber = newNumber
+        }
         
         print("Result: New Image Number =\(imageNumber)")
         print("--- The End---")
@@ -46,8 +47,20 @@ struct CardView: View {
                         
                         Button{
                             print("The button was pressed")
+                            isShowingSheet.toggle()
                         }label: {
                             CustomButtonView()
+                        }
+                        .sheet(isPresented: $isShowingSheet)
+                        {
+                            SettingsView()
+                                .presentationDragIndicator(.visible)
+                                .presentationDetents(
+                                    [
+                                        .medium,
+                                        .large
+                                    ]
+                                )
                         }
                     }
                     Text("Fun and enjoyable outdoor aactivity for friends and families")
@@ -59,7 +72,7 @@ struct CardView: View {
                 //MARK: - MAIN CONTENT
                 
                 ZStack {
-                   
+                    CustomCircleView()
                     
                     Image("image-\(imageNumber)")
                         .resizable()
@@ -70,7 +83,7 @@ struct CardView: View {
                 //MARK: - FOOTER
                 
                 Button{
-                   randomImage()
+                    randomImage()
                 }label: {
                     Text("Explore More")
                         .font(.title2)

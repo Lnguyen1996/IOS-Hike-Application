@@ -82,7 +82,16 @@ struct SettingsView: View {
                     HStack (spacing:12){
                         ForEach(alternateAppIcon.indices,id:\.self) { item in
                             Button{
-                                print("Icon was pressed.")
+                                print("Icon \(alternateAppIcon[item]) was pressed.")
+                                
+                                UIApplication.shared.setAlternateIconName(alternateAppIcon[item]){
+                                    error in
+                                    if error != nil{
+                                        print("Failed request to update the app's icon: \(alternateAppIcon[item]) \(String(describing: error?.localizedDescription))")
+                                    }else{
+                                        print("Success! you have changed the app's icon to \(alternateAppIcon[item])")
+                                    }
+                                }
                             } label: {
                                 Image("\(alternateAppIcon[item])-Preview")
                                     .resizable()
@@ -94,6 +103,7 @@ struct SettingsView: View {
                         }
                     }
                 }//: SCROLL VIEW
+                .padding(.top,12)
                 
                 Text("Choose your favourite app icon from the collection above")
                     .frame(minWidth: 0,maxWidth: .infinity)
